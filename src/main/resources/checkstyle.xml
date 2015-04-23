@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+"-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+"http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<!-- http://checkstyle.sourceforge.net/index.html -->
+<module name="Checker">
+
+  <!-- Check for trailing white spaces -->
+  <module name="RegexpSingleline">
+    <property name="severity" value="error"/>
+    <property name="format" value="\s+$"/>
+    <property name="message" value="Line has trailing spaces."/>
+  </module>
+
+  <!-- Check for TABs -->
+  <module name="FileTabCharacter">
+    <property name="severity" value="error"/>
+    <property name="eachLine" value="true"/>
+  </module>
+
+  <module name="TreeWalker">
+    <!-- Check for wildcard imports -->
+    <module name="AvoidStarImport"/>
+
+    <module name="RedundantImport"/>
+    <module name="UnusedImports"/>
+    <module name="UpperEll"/>
+    <module name="EmptyStatement"/>
+    <module name="EqualsHashCode"/>
+    <module name="ModifiedControlVariable"/>
+    <module name="StringLiteralEquality"/>
+
+    <!-- Check for max line length -->
+    <module name="LineLength">
+      <property name="severity" value="warning"/>
+      <property name="max" value="120"/>
+      <property name="ignorePattern" value="^(package)|(import)"/>
+    </module>
+
+    <!-- Check for more nested loops than agreed>
+    <module name="NestedForDepth">
+      <property name="severity" value="warning"/>
+      <property name="max" value="3"/>
+    </module-->
+
+    <!-- Check for import order>
+    <module name="ImportOrder">
+      <property name="groups" value="org,/^java\./,/^javax?\./"/>
+      <property name="ordered" value="true"/>
+      <property name="separated" value="true"/>
+      <property name="option" value="above"/>
+    </module-->
+  </module>
+</module>
