@@ -10,7 +10,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "EMPLOYEE")
 public class Employee {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "id")
     private Long id;
 
